@@ -12,10 +12,11 @@ import TopCasinos from "@/components/TopCasinos";
 export default function Home() {
   return <>
     <Hero/>
+    <TopCasinos />
     <Services/>
     <About/>
     <Faq/>
-        <TopCasinos />
+
     <Partners/>
     <CustomSlider />
     <Contact />
