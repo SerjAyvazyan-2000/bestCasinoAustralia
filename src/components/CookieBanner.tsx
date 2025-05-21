@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 export default function CookieBanner() {
   const [show, setShow] = useState(false);
@@ -24,7 +25,7 @@ export default function CookieBanner() {
       <div className="bg-gray-900 text-white rounded-lg shadow-lg p-4 md:p-6 flex flex-col md:flex-row items-center justify-between gap-4 border border-gray-700 animate-fade-in-up">
         <div className="text-sm md:text-base">
           <strong>We use cookies</strong> to improve your experience on our site. By using this website, you agree to our{' '}
-          <a href="/cookie-policy" className="underline cursor-pointer text-blue-400 hover:text-blue-300" target="_blank">Cookie Policy</a>.
+          <Link href="/cookie-policy" className="underline cursor-pointer text-blue-400 hover:text-blue-300" target="_blank">Cookie Policy</Link>.
         </div>
         <button
           onClick={acceptCookies}

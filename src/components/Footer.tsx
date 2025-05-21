@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 
 
 const Footer = () => {
@@ -27,9 +28,9 @@ const Footer = () => {
         <div>
           <h4 className="text-lg font-semibold text-white mb-4">Info</h4>
           <ul className="space-y-2 text-sm">
-            <li><a href="/cookie-policy" className="hover:text-yellow-400">Cookie Policy</a></li>
-            <li><a href="/privacy-policy" className="hover:text-yellow-400">Privacy Policy</a></li>
-            <li><a href="/terms-of-use" className="hover:text-yellow-400">Terms of Use</a></li>
+            <li><Link href="/cookie-policy" className="hover:text-yellow-400">Cookie Policy</Link></li>
+            <li><Link href="/privacy-policy" className="hover:text-yellow-400">Privacy Policy</Link></li>
+            <li><Link href="/terms-of-use" className="hover:text-yellow-400">Terms of Use</Link></li>
           </ul>
           <div className="mt-4 flex space-x-4">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 text-xl">
