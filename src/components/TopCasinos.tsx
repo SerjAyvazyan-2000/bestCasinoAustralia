@@ -12,7 +12,6 @@ const TopCasinos = () => {
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* Карточка 1: Spinsy Casino */}
                     <div
                         className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl p-6 border-2 border-red-700 shadow-lg relative">
                         {/* Логотип казино */}

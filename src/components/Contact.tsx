@@ -2,10 +2,12 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { useRouter } from 'next/navigation';
 
 export default function Contact() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -21,6 +23,14 @@ export default function Contact() {
 
     return () => observer.disconnect();
   }, []);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    if (form.checkValidity()) {
+      router.push('/thank-you');
+    }
+  };
 
   return (
     <section id='contact'
@@ -90,7 +100,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-1">
                 Name
@@ -144,6 +154,8 @@ export default function Contact() {
             >
               Send Message
             </button>
+
+
           </form>
         </div>
       </div>

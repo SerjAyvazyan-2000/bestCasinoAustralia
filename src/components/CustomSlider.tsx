@@ -66,43 +66,45 @@ export default function CustomSlider() {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className={`py-20 px-6 bg-gradient-to-b from-gray-950 to-gray-900 text-white transition-all duration-1000 ${
-        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-10">Explore Our Features</h2>
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={30}
-          slidesPerView={1}
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 5000 }}
-          loop
-        >
-          {slides.map((slide, index) => (
-            <SwiperSlide key={index}>
-              <div className="flex flex-col md:flex-row items-center bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                <div className="md:w-1/2">
-               <Image
-  src={slide.image}
-  alt={slide.title}
-  width={600}
-  height={300}
-  className="object-cover w-full h-[200px] md:h-[300px]"
-/>
-                </div>
-                <div className="md:w-1/2 p-6">
-                  <h3 className="text-2xl font-semibold mb-4">{slide.title}</h3>
-                  <p className="text-gray-300">{slide.description}</p>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </section>
+      <section className="py-24 px-6 bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] text-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 tracking-tight">
+            💎 Explore Our Features
+          </h2>
+
+          <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={40}
+              slidesPerView={1}
+              pagination={{ clickable: true }}
+              autoplay={{ delay: 4000 }}
+              loop
+              breakpoints={{
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+          >
+            {slides.map((slide, index) => (
+                <SwiperSlide key={index}>
+                  <div className="bg-white/5 rounded-2xl overflow-hidden shadow-xl backdrop-blur-md hover:scale-[1.02] hover:shadow-2xl transition-all duration-500">
+                    <div className="relative w-full h-52 md:h-60">
+                      <Image
+                          src={slide.image}
+                          alt={slide.title}
+                          layout="fill"
+                          objectFit="cover"
+                          className="rounded-t-2xl"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-semibold mb-3 text-yellow-400">{slide.title}</h3>
+                      <p className="text-sm text-gray-300">{slide.description}</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
   );
 }
