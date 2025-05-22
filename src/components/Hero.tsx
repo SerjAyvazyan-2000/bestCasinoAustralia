@@ -29,7 +29,7 @@ const slides = [
 
 export default function Hero() {
   return (
-    <section id='hero' className="relative w-full h-screen">
+    <section id='hero' className="relative w-full pt-20">
       <Swiper
         modules={[Autoplay, Pagination, EffectFade]}
         autoplay={{ delay: 6000 }}
@@ -41,7 +41,7 @@ export default function Hero() {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div
-              className="w-full h-screen bg-center bg-cover relative flex items-center justify-center"
+              className="w-full pt-40 pb-40 h-full min-h-150 bg-center bg-cover relative flex items-center justify-center"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
               <div className="absolute inset-0 bg-black/60 z-0" />
